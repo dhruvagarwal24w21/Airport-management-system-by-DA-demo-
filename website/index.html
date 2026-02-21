@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airport Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">✈️ AeroManage</div>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#flights">Flights</a></li>
+                <li><a href="#booking">Book</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Airport Management System</h1>
+            <p>Your complete solution for flight management, booking & more</p>
+            <a href="#booking" class="btn">Book a Flight</a>
+            <a href="#flights" class="btn btn-outline">View Flights</a>
+        </div>
+    </section>
+
+    <!-- Flights Section -->
+    <section id="flights" class="section">
+        <h2>Available Flights</h2>
+        <div class="search-bar">
+            <input type="text" id="searchFrom" placeholder="From City">
+            <input type="text" id="searchTo" placeholder="To City">
+            <input type="date" id="searchDate">
+            <button onclick="searchFlights()">Search</button>
+        </div>
+        <table id="flightTable">
+            <thead>
+                <tr>
+                    <th>Flight #</th>
+                    <th>Airline</th>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Departure</th>
+                    <th>Seats</th>
+                    <th>Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody id="flightBody">
+                <!-- Filled by JavaScript -->
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Booking Section -->
+    <section id="booking" class="section dark">
+        <h2>Book a Ticket</h2>
+        <form id="bookingForm" class="form-grid">
+            <div class="form-group">
+                <label>Full Name</label>
+                <input type="text" id="bName" required>
+            </div>
+            <div class="form-group">
+                <label>Age</label>
+                <input type="number" id="bAge" required>
+            </div>
+            <div class="form-group">
+                <label>Gender</label>
+                <select id="bGender">
+                    <option>Male</option>
+                    <option>Female</option>
+                    <option>Other</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Phone</label>
+                <input type="tel" id="bPhone" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="bEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Select Flight</label>
+                <select id="bFlight"></select>
+            </div>
+            <div class="form-group">
+                <label>Class</label>
+                <select id="bClass">
+                    <option value="E">Economy</option>
+                    <option value="B">Business</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>Passport Number</label>
+                <input type="text" id="bPassport" required>
+            </div>
+            <button type="submit" class="btn">Confirm Booking</button>
+        </form>
+    </section>
+
+    <!-- Boarding Pass Modal -->
+    <div id="boardingPass" class="modal" style="display:none;">
+        <div class="boarding-card">
+            <h2>✈️ BOARDING PASS</h2>
+            <div id="passDetails"></div>
+            <button onclick="closeBoardingPass()" class="btn">Close</button>
+        </div>
+    </div>
+
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h2>About This Project</h2>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>🎓 College Project</h3>
+                <p>Built as a 1st Year project demonstrating C programming
+                   concepts with a web frontend.</p>
+            </div>
+            <div class="about-card">
+                <h3>⚙️ Features</h3>
+                <ul>
+                    <li>Flight Management</li>
+                    <li>Passenger Registration</li>
+                    <li>Ticket Booking</li>
+                    <li>Boarding Pass Generation</li>
+                    <li>Search & Filter</li>
+                    <li>Statistics Dashboard</li>
+                </ul>
+            </div>
+            <div class="about-card">
+                <h3>🛠️ Tech Stack</h3>
+                <ul>
+                    <li>Backend Logic: C Language</li>
+                    <li>Frontend: HTML/CSS/JS</li>
+                    <li>Data Storage: File Handling</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>Airport Management System &copy; 2025 | Made by [Your Name]</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
